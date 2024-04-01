@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>스테이지어스 퍼즐맞추기 게임😻</h1>
+      <p>랜덤으로 생성된 사진 퍼즐을 오른쪽 빈 공간에 맞춰서 넣어보세요!</p>
+    </header>
+
+    <main>
+      <!-- 퍼즐 랜덤으로 생성되는 공간 -->
+      <section id="puzzle-wrapper">
+        <!-- 반복되는 구간 js로 처리 -->
+        <!-- <div
+        class="puzzle-item"
+        draggable="true"
+        ondragstart="getColorEvent(event)">1
+      </div> -->
+      </section>
+
+      <!-- 퍼즐 맞춰야하는 저장공간 -->
+      <section id="puzzle-wrapper-target">
+        <!-- <div class="puzzle-item1" 
+        ondragover="onHoverEvent(event)"
+        ondrop="setColorEvent(event)">
+        1
+      </div> -->
+      </section>
+    </main>
+    <div>
+      <button class="start-btn" onclick="changeImgEvent()">start</button>
+      <button class="reset-btn" onclick="resetBtnEvent()">reset</button>
+    </div>
+  </body>
+</html>
