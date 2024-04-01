@@ -29,6 +29,7 @@ const setPuzzleItem = () => {
     puzzleItem.draggable = true;
     puzzleItem.style.backgroundImage = `url(./img/${1 + i}.png)`;
     puzzleItem.id = 1 + i;
+    puzzleItem.setAttribute("data-index", i);
 
     puzzleItem.ondragstart = getColorEvent;
     puzzleItem.ondragover = onHoverEvent;
@@ -65,6 +66,7 @@ const getPuzzleItem = () => {
     puzzleItem.classList.add("puzzle-item1");
     puzzleItem.draggable = true;
     puzzleItem.id = 1 + i;
+    puzzleItem.setAttribute("data-index", i);
 
     puzzleItem.ondragstart = getColorEvent;
     puzzleItem.ondragover = onHoverEvent;
@@ -77,38 +79,38 @@ getPuzzleItem();
 
 // 이벤트 함수 목록
 
-var dragStartTag = null;
-var dragStartBg = null;
+const draged = {
+  el: null,
+  id: null,
+  index: null,
+};
 
+// ########## 드래그 시작했을때 ##############
 function getColorEvent(e) {
-  // color = window.getComputedStyle(e.target).backgroundColor;
-  dragStartTag = e.target;
-  dragStartBg = window.getComputedStyle(e.target).backgroundImage;
+  console.log(e);
+  color = window.getComputedStyle(e.target).backgroundColor;
+  imageUrl = window.getComputedStyle(e.target).backgroundImage;
   //console.log(color);
   //console.log(e.target);
-  //draggedItemId = e.target.id;
+  draggedItemId = e.target.id;
 }
 
+// ########## 드래그 시작하고 이동했을때 ##############
 function onHoverEvent(e) {
   //console.log("이거 실행됨?");
   e.preventDefault();
 }
+
+// ########## 드래그 시작하고 특정 위치에 놓았을때 ##############
 
 function setColorEvent(e) {
   //조건문을 활용해서 puzzle-item class 의 div와
   //puzzle-item class1 의 div의 drag & drop 했을 때 위치를 바꿔주는 코드
   //그 둘의 div태그 자체의 위치를 바꿔줘
   let dest = e.target;
-  //let tag = document.getElementById(draggedItemId);
-
-  // drop했을 때 해당 태그의 배경 이미지
-  var dropBg = window.getComputedStyle(e.target).backgroundImage;
-
-  dest.style.backgroundImage = dragStartBg;
-  dragStartTag.style.backgroundImage = dropBg;
-
-  //dest.style.backgroundColor = color;
-  //dest.style.backgroundImage = imageUrl;
+  let tag = document.getElementById(draggedItemId);
+  dest.style.backgroundColor = color;
+  dest.style.backgroundImage = imageUrl;
 }
 
 // start버튼을 눌렀을 때 발생하는 이벤트 함수

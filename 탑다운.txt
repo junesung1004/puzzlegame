@@ -1,0 +1,15 @@
+** 탑다운
+
+1. 드래그 시작
+- 드래그를 한 Tag의 id를 가져옴
+- 드래그를 한 Tag의 backgroundImg를 가져옴
+
+2. 드래그 오버
+
+3. 드랍
+- 드롭을 한 Tag의 backgroundImg를 가져옴
+- 드래그를 한 Tag의 backgroundImg를 교체
+- 드롭을 한 Tag의 backgroundImg를 교체
+
+
+전역변수로 준비해야 하는 것들 : 드래그 시작한 tag / 드래그 시작한 Tag의 backgroundImg
