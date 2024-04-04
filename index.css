@@ -11,6 +11,10 @@ main {
   display: flex;
 }
 
+p {
+  margin-bottom: 100px;
+}
+
 #puzzle-wrapper,
 #puzzle-wrapper-target {
   width: 600px;
@@ -18,12 +22,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .puzzle-item {
-  flex: 1 0 150px;
-  height: 130px;
+  height: 150px;
   background-color: aqua;
   background-size: cover; /* 이미지를 박스에 맞게 조절 */
   background-repeat: no-repeat;
@@ -33,13 +36,17 @@ main {
   justify-content: center;
   font-weight: 600;
   font-size: 22px;
-  min-width: 150px;
+  width: 150px;
   cursor: grab;
 }
 
+.puzzle-item img {
+  width: 100%;
+  height: 100%;
+}
+
 .puzzle-item1 {
-  flex: 1 0 160px;
-  height: 160px;
+  height: 150px;
   background-color: gray;
   background-size: cover; /* 이미지를 박스에 맞게 조절 */
   background-repeat: no-repeat;
@@ -49,8 +56,13 @@ main {
   justify-content: center;
   font-weight: 600;
   font-size: 22px;
-  min-width: 150px;
+  width: 150px;
   cursor: grab;
+}
+
+.puzzle-item1 img {
+  width: 100%;
+  height: 100%;
 }
 
 .start-btn,
